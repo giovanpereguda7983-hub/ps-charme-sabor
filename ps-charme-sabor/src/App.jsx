@@ -15,20 +15,19 @@ export default function App() {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
-  function addToCart(product) {
-    setCart([...cart, product]);
-  }
+ function finishOrder() {
+  const message = cart
+    .map((item) => `• ${item.name} - R$ ${item.price}`)
+    .join("\n");
 
-  const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
+  const fullMessage = `Pedido:\n${message}\nTotal: R$ ${total}`;
 
-  function finishOrder() {
-    const message = cart
-      .map((item) => `• ${item.name} - R$ ${item.price}`)
-      .join("%0A");
+  const encodedMessage = encodeURIComponent(fullMessage);
 
-    const url = `https://wa.me/554999664376?text=Pedido:%0A${message}%0ATotal: R$ ${total}`;
-    window.open(url, "_blank");
-  }
+  const url = `https://wa.me/554999664376?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
+}
 
   return (
     <div>
