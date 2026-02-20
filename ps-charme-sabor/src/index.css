@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+}
+/* ===== HEADER COM LOGO FUNDO ===== */
+
+.header {
+  background: url("/images/logo.png") center/cover no-repeat;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.header-overlay h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.header-overlay p {
+  margin: 5px 0 0;
+}
+/* ===== CARROSSEL ===== */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.arrow {
+  background: #2e7d32;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}

@@ -1,0 +1,68 @@
+export const products = [
+  {
+    id: 1,
+    name: "Cuias de Madeira",
+    price: 79.9,
+    images: [
+      "/images/cuia1.jpeg",
+      "/images/cuia2.jpeg",
+      "/images/cuia3.jpeg",
+      "/images/cuia4.jpeg",
+      "/images/cuia5.jpeg",
+      "/images/cuia6.jpeg",
+      "/images/cuia7.jpeg",
+      "/images/cuia8.jpeg",
+      "/images/cuia9.jpeg",
+      "/images/cuia10.jpeg",
+      "/images/cuia11.jpeg",
+      "/images/cuia12.jpeg",
+      "/images/cuia13.jpeg",
+      "/images/cuia14.jpeg",
+      "/images/cuia15.jpeg",
+      "/images/cuia16.jpeg",
+      "/images/cuia17.jpeg",
+      "/images/cuia18.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    name: "Copo Stanley Personalizado",
+    price: "50.0a120.0",
+    images: [
+      "/images/copos1.jpeg",
+      "/images/copos2.jpeg",
+      "/images/copos3.jpeg",
+      "/images/copos4.jpeg",
+      "/images/copos5.jpeg",
+      "/images/copos6.jpeg",
+      "/images/copos7.jpeg",
+      "/images/copos8.jpeg",
+      "/images/copos9.jpeg",
+      "/images/copos10.jpeg",
+    ],
+  },
+   {
+    id: 3,
+    name: "Bombas para Chimarrão",
+    price: 49.9,
+    images: [
+      "/images/bombas1.jpeg",
+      "/images/bombas2.jpeg",
+    ],
+  },
+   {
+    id: 4,
+    name: "Chá Artesanal para Chimarrão",
+    price: 14.0,
+    images: [
+      "/images/chas1.jpeg",
+      "/images/chas2.jpeg",
+      "/images/chas3.jpeg",
+      "/images/chas4.jpeg",
+      "/images/chas5.jpeg",
+      "/images/chas6.jpeg",
+    ],
+},
+];
+
+
