@@ -24,11 +24,25 @@ function addToCart(product) {
   const [selectedImage, setSelectedImage] = useState(null);
 
  function finishOrder() {
-  const message = cart
-    .map((item) => `• ${item.name} - R$ ${item.price}`)
-    .join("\n");
+  if (cart.length === 0) {
+    alert("Seu carrinho está vazio.");
+    return;
+  }
 
-  const fullMessage = `Pedido:\n${message}\nTotal: R$ ${total}`;
+  const message = cart
+    .map((item, index) =>
+      `${index + 1}. ${item.name}\n   💰 Faixa de valor: R$ ${item.price}`
+    )
+    .join("\n\n");
+
+  const fullMessage =
+`🛒 *NOVO PEDIDO - PS Charme & Sabor*
+
+${message}
+
+📌 Observação:
+Valores variam conforme modelo e personalização.
+Confirmar detalhes pelo WhatsApp.`;
 
   const encodedMessage = encodeURIComponent(fullMessage);
 
