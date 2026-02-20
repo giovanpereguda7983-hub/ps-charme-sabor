@@ -8,6 +8,14 @@ import "./App.css";
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  const total = cart.reduce(
+  (sum, item) => sum + Number(item.price),
+  0
+);
+
+function addToCart(product) {
+  setCart([...cart, product]);
+}
   const [lightbox, setLightbox] = useState({
   open: false,
   image: "",
@@ -66,7 +74,9 @@ export default function App() {
     </p>
   ))}
 
-  <button className="finish">Finalizar no WhatsApp</button>
+  <button className="finish" onClick={finishOrder}>
+  Finalizar no WhatsApp
+</button>
 
   {/* OBSERVAÇÃO GRAVAÇÃO */}
   <p className="laser-note">
