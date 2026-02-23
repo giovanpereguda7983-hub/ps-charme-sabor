@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Cuias de Madeira",
-    price: 79.9,
+    price: 79.90,
     images: [
       "/images/cuia1.jpeg",
       "/images/cuia2.jpeg",
@@ -27,7 +27,7 @@ export const products = [
   {
     id: 2,
     name: "Copo Stanley Personalizado",
-    price: "50.0a120.0",
+    price: "50.0 a 120.0",
     images: [
       "/images/copos1.jpeg",
       "/images/copos2.jpeg",
@@ -44,10 +44,16 @@ export const products = [
    {
     id: 3,
     name: "Bombas para Chimarrão",
-    price: 49.9,
+    price: 49.90,
     images: [
       "/images/bombas1.jpeg",
       "/images/bombas2.jpeg",
+      "/images/bombas3.jpeg",
+      "/images/bombas4.jpeg",
+      "/images/bombas5.jpeg",
+      "/images/bombas6.jpeg",
+      "/images/bombas7.jpeg",
+      "/images/bombas8.jpeg",
     ],
   },
    {
