@@ -72,7 +72,7 @@ export const products = [
  {
     id: 5,
     name: "Kit Mateira",
-    price: "120,00 a 350,00",
+    price: "120.00 a 350.00",
     images: [
       "/images/kitMateira1.jpeg",
       "/images/kitMateira2.jpeg",
