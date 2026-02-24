@@ -137,7 +137,7 @@ function addToCart(product) {
 function removeFromCart(index) {
   const newCart = cart.filter((_, i) => i !== index);
   setCart(newCart);
-
+}
 
   function next() {
     setIndex((prev) => (prev + 1) % product.images.length);
@@ -176,5 +176,5 @@ function removeFromCart(index) {
       </button>
     </div>
   );
-}
+
 
