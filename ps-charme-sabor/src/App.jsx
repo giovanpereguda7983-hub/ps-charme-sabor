@@ -15,6 +15,10 @@ export default function App() {
 
 function addToCart(product) {
   setCart([...cart, product]);
+  function removeFromCart(index) {
+  const newCart = cart.filter((_, i) => i !== index);
+  setCart(newCart);
+}
 }
   const [lightbox, setLightbox] = useState({
   open: false,
@@ -82,11 +86,21 @@ Confirmar detalhes pelo WhatsApp.`;
       <div className="cart">
   <h2>Carrinho</h2>
 
-  {cart.map((item, i) => (
-    <p key={i}>
-      {item.name} — R$ {item.price}
-    </p>
-  ))}
+ {cart.map((item, i) => (
+  <div key={i} className="cart-item">
+    <div>
+      <strong>{item.name}</strong>
+      <p>💰 R$ {item.price}</p>
+    </div>
+
+    <button
+      className="remove-btn"
+      onClick={() => removeFromCart(i)}
+    >
+      ❌
+    </button>
+  </div>
+))}
 
   <button className="finish" onClick={finishOrder}>
   Finalizar no WhatsApp
@@ -116,8 +130,14 @@ Confirmar detalhes pelo WhatsApp.`;
    CARD PRODUTO
    =============================== */
 
-function ProductCard({ product, addToCart, setSelectedImage }) {
-  const [index, setIndex] = useState(0);
+function addToCart(product) {
+  setCart([...cart, product]);
+}
+
+function removeFromCart(index) {
+  const newCart = cart.filter((_, i) => i !== index);
+  setCart(newCart);
+
 
   function next() {
     setIndex((prev) => (prev + 1) % product.images.length);

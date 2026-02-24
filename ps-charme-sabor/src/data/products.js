@@ -69,6 +69,24 @@ export const products = [
       "/images/chas6.jpeg",
     ],
 },
+ {
+    id: 5,
+    name: "Kit Mateira",
+    price: "120,00 a 350,00",
+    images: [
+      "/images/kitMateira1.jpeg",
+      "/images/kitMateira2.jpeg",
+      "/images/kitMateira3.jpeg",
+      "/images/kitMateira4.jpeg",
+      "/images/kitMateira5.jpeg",
+      "/images/kitMateira6.jpeg",
+      "/images/kitMateira7.jpeg",
+      "/images/kitMateira8.jpeg",
+      "/images/kitMateira9.jpeg",
+      "/images/kitMateira10.jpeg",
+      
+    ],
+  },
 ];
 
 
