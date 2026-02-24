@@ -74,9 +74,9 @@ export const products = [
     name: "Kit Mateira",
     price: "120.00 a 350.00",
     images: [
-      "/images/kitMateira1.jpeg",
-      "/images/kitMateira2.jpeg",
-      "/images/kitMateira3.jpeg",
+      "/images/kitmateira1.jpeg",
+      "/images/kitmateira2.jpeg",
+      "/images/kitmateira3.jpeg",
       "/images/kitMateira4.jpeg",
       "/images/kitMateira5.jpeg",
       "/images/kitMateira6.jpeg",
