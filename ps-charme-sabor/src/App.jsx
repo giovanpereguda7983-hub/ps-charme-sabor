@@ -1,46 +1,34 @@
-/* ===============================
-   APP.JSX  (com zoom estilo Shopee / Mercado Livre)
-   =============================== */
-
 import { useState } from "react";
 import { products } from "./data/products";
 import "./App.css";
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const total = cart.reduce(
-  (sum, item) => sum + Number(item.price),
-  0
-);
-
-function addToCart(product) {
-  setCart([...cart, product]);
-  function removeFromCart(index) {
-  const newCart = cart.filter((_, i) => i !== index);
-  setCart(newCart);
-}
-}
-  const [lightbox, setLightbox] = useState({
-  open: false,
-  image: "",
-});
-
   const [selectedImage, setSelectedImage] = useState(null);
 
- function finishOrder() {
-  if (cart.length === 0) {
-    alert("Seu carrinho está vazio.");
-    return;
+  function addToCart(product) {
+    setCart([...cart, product]);
   }
 
-  const message = cart
-    .map((item, index) =>
-      `${index + 1}. ${item.name}\n   💰 Faixa de valor: R$ ${item.price}`
-    )
-    .join("\n\n");
+  function removeFromCart(index) {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+  }
 
-  const fullMessage =
-`🛒 *NOVO PEDIDO - PS Charme & Sabor*
+  function finishOrder() {
+    if (cart.length === 0) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    const message = cart
+      .map(
+        (item, index) =>
+          `${index + 1}. ${item.name}\n   💰 Faixa de valor: R$ ${item.price}`
+      )
+      .join("\n\n");
+
+    const fullMessage = `🛒 *NOVO PEDIDO - PS Charme & Sabor*
 
 ${message}
 
@@ -48,29 +36,25 @@ ${message}
 Valores variam conforme modelo e personalização.
 Confirmar detalhes pelo WhatsApp.`;
 
-  const encodedMessage = encodeURIComponent(fullMessage);
-
-  const url = `https://wa.me/554999664376?text=${encodedMessage}`;
-
-  window.open(url, "_blank");
-}
+    const encodedMessage = encodeURIComponent(fullMessage);
+    const url = `https://wa.me/554999664376?text=${encodedMessage}`;
+    window.open(url, "_blank");
+  }
 
   return (
     <div>
-      {/* HEADER */}
       <header className="header">
         <div className="header-content">
-    
-    <img
-      src="/images/logo.png"
-      alt="Logo PS Charme Sabor"
-      className="logo" />
+          <img
+            src="/images/logo.png"
+            alt="Logo PS Charme Sabor"
+            className="logo"
+          />
           <h1>PS Charme & Sabor</h1>
           <p>Cuias • Copos Stanley • Bombas • Chás • Gravação a Laser</p>
         </div>
       </header>
 
-      {/* PRODUTOS */}
       <div className="products">
         {products.map((product) => (
           <ProductCard
@@ -82,46 +66,39 @@ Confirmar detalhes pelo WhatsApp.`;
         ))}
       </div>
 
-      {/* CARRINHO */}
       <div className="cart">
-  <h2>Carrinho</h2>
+        <h2>Carrinho</h2>
 
- {cart.map((item, i) => (
-  <div key={i} className="cart-item">
-    <div>
-      <strong>{item.name}</strong>
-      <p>💰 R$ {item.price}</p>
-    </div>
+        {cart.map((item, i) => (
+          <div key={i} className="cart-item">
+            <div>
+              <strong>{item.name}</strong>
+              <p>💰 R$ {item.price}</p>
+            </div>
 
-    <button
-      className="remove-btn"
-      onClick={() => removeFromCart(i)}
-    >
-      ❌
-    </button>
-  </div>
-))}
+            <button
+              className="remove-btn"
+              onClick={() => removeFromCart(i)}
+            >
+              ❌
+            </button>
+          </div>
+        ))}
 
-  <button className="finish" onClick={finishOrder}>
-  Finalizar no WhatsApp
-</button>
+        <button className="finish" onClick={finishOrder}>
+          Finalizar no WhatsApp
+        </button>
 
-  {/* OBSERVAÇÃO GRAVAÇÃO */}
-  <p className="laser-note">
-    ⚠️ Gravações a laser devem ser combinadas pelo WhatsApp após o pedido.
-  </p>
-</div>
+        <p className="laser-note">
+          ⚠️ Gravações a laser devem ser combinadas pelo WhatsApp após o pedido.
+        </p>
+      </div>
 
-{/* ===== LIGHTBOX ===== */}
-{lightbox.open && (
-  <div
-    className="lightbox"
-    onClick={() => setLightbox({ open: false, image: "" })}
-  >
-    <img src={lightbox.image} alt="Zoom Produto" />
-  </div>
-)}
-
+      {selectedImage && (
+        <div className="lightbox" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Zoom Produto" />
+        </div>
+      )}
     </div>
   );
 }
@@ -130,14 +107,8 @@ Confirmar detalhes pelo WhatsApp.`;
    CARD PRODUTO
    =============================== */
 
-function addToCart(product) {
-  setCart([...cart, product]);
-}
-
-function removeFromCart(index) {
-  const newCart = cart.filter((_, i) => i !== index);
-  setCart(newCart);
-}
+function ProductCard({ product, addToCart, setSelectedImage }) {
+  const [index, setIndex] = useState(0);
 
   function next() {
     setIndex((prev) => (prev + 1) % product.images.length);
@@ -152,20 +123,15 @@ function removeFromCart(index) {
   return (
     <div className="card">
       <div className="carousel">
-        <button className="arrow" onClick={prev}>
-          ◀
-        </button>
+        <button className="arrow" onClick={prev}>◀</button>
 
-        {/* IMAGEM COM ZOOM */}
         <img
           src={product.images[index]}
           alt={product.name}
           onClick={() => setSelectedImage(product.images[index])}
         />
 
-        <button className="arrow" onClick={next}>
-          ▶
-        </button>
+        <button className="arrow" onClick={next}>▶</button>
       </div>
 
       <h3>{product.name}</h3>
@@ -176,5 +142,4 @@ function removeFromCart(index) {
       </button>
     </div>
   );
-
-
+}
