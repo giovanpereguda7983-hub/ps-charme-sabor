@@ -27,7 +27,7 @@ export const products = [
   {
     id: 2,
     name: "Copo Stanley Personalizado",
-    price: "50.0 a 120.0",
+    price: "55.0 a 120.0",
     images: [
       "/images/copos1.jpeg",
       "/images/copos2.jpeg",
