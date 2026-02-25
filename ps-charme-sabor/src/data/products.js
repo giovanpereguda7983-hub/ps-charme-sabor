@@ -44,7 +44,7 @@ export const products = [
    {
     id: 3,
     name: "Bombas para Chimarrão",
-    price: "30.00 a 120.00",
+    price: "30.0 a 120.0",
     images: [
       "/images/bombas1.jpeg",
       "/images/bombas2.jpeg",
@@ -72,7 +72,7 @@ export const products = [
  {
     id: 5,
     name: "Kit Mateira",
-    price: "120.00 a 350.00",
+    price: "120.0 a 350.0",
     images: [
       "/images/mateira1.jpeg",
       "/images/mateira2.jpeg",
