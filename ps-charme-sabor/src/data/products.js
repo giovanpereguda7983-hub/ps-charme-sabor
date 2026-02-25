@@ -44,7 +44,7 @@ export const products = [
    {
     id: 3,
     name: "Bombas para Chimarrão",
-    price: 49.95,
+    price: "30.00 a 120.00",
     images: [
       "/images/bombas1.jpeg",
       "/images/bombas2.jpeg",
