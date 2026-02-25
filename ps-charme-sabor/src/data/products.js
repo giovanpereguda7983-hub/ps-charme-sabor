@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Cuias de Madeira",
-    price: 79.90,
+    price: 79.95,
     images: [
       "/images/cuia1.jpeg",
       "/images/cuia2.jpeg",
@@ -44,7 +44,7 @@ export const products = [
    {
     id: 3,
     name: "Bombas para Chimarrão",
-    price: 49.90,
+    price: 49.95,
     images: [
       "/images/bombas1.jpeg",
       "/images/bombas2.jpeg",
@@ -59,7 +59,7 @@ export const products = [
    {
     id: 4,
     name: "Chá Artesanal para Chimarrão",
-    price: 14.0,
+    price: 14,
     images: [
       "/images/chas1.jpeg",
       "/images/chas2.jpeg",
